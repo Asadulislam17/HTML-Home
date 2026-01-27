@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table 5</title>
+    <style>
+        table, th, td {
+            border: 3px solid navy; 
+        }
+        .a{
+            border-bottom: none;
+            border-top: none;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center;">
+        invoice
+        <table border="3" style="border-collapse: collapse; width: 100%;">
+            <tr>
+                <td >Item/Desc.</td>
+                <td>Quy.</td>
+                <td >@</td>
+                <td>Price</td>
+            </tr>
+            <tr>
+                <td class="b">Paperclips (Box)</td>
+                <td class="b">100</td>
+                <td class="b">1.15</td>
+                <td class="b">115.00</td>
+            </tr>
+            
+            <tr>
+                <td class="b">Paper(Case)</td>
+                <td class="b">10</td>
+                <td class="b">45.99</td>
+                <td class="b">459.90</td>
+            </tr>
+            
+            <tr>
+                <td class="a">Wastepaper</td>
+                <td class="b" rowspan="2">2</td>
+                <td class="b" rowspan="2">17.99</td>
+                <td class="b" rowspan="2">35.98</td>
+            </tr>
+             <tr>
+                <td class="a">Baskets</td>
+            </tr>
+            <tr>
+                <td class="b" colspan="3">Subtotal</td>
+                <td class="b">610.88</td>
+            </tr>
+            <tr>
+                <td class="b" colspan="2">Tax</td>
+                <td class="b">7%</td>
+                <td class="b">42.76</td>
+            </tr>
+            <tr>
+                <td class="b" colspan="3">Total</td>
+                <td class="b">653.64</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

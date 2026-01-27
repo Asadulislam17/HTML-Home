@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFrame</title>
+    <style>
+        .btnn{
+            width: 220px;
+            height: 40px;
+            background: #ff7200;
+            border: none;
+            margin-top: 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #fff;
+            transition: 0.4s ease;
+        }
+        .btnn:hover{
+            background: #fff;
+            color: #ff7200;
+        }
+        .btnn a{
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+         }
+         h1 {
+            border-bottom: 3px solid #ff7200;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Home Page</h1>
+    <div>
+        <div style="width: 15%; height: 700px; float: left; background-color: #1e3d59;" >
+            <div>
+                <a href="index.html" target="iframe">
+                    <button class="btnn">Home</button>
+                </a>
+            </div>
+            <div>
+                <a href="html_form.html" target="iframe">
+                    <button class="btnn">From</button>
+                </a>
+            </div>
+
+            <div>
+                <a href="TAble-5.html" target="iframe">
+                    <button class="btnn" >Table</button>
+                    </a>
+            </div>
+            <div>
+                <a href="Employee_form.html" target="iframe">
+                    <button class="btnn">Table</button>
+                </a>
+            </div>
+        </div>
+        <div style="background-color:  #F8F9FA;">
+            <iframe src="index.html" frameborder="0" name="iframe" width="85%" height="700px"></iframe>
+        </div>
+    </div>
+</body>
+</html>
