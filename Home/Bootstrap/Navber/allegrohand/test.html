@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Button</title>
+</head>
+<body>
+
+<div id="container"></div> <!-- Button রাখার জন্য container -->
+
+<script>
+    // 1. Button element তৈরি
+    let btn = document.createElement("button");
+
+    // 2. Button এ text দিন
+    btn.innerText = "Click Me!";
+    btn.style.backgroundColor = "blue"; // background color
+    btn.style.color = "white";          // text color
+    btn.style.padding = "10px 20px";    // padding
+    btn.style.fontSize = "16px";        // font size
+    btn.style.border = "none";          // border remove
+    btn.style.borderRadius = "5px";     // rounded corner
+    btn.style.cursor = "pointer"; 
+
+    // 3. Button click event add করুন
+    btn.addEventListener("click", function() {
+        alert("Button clicked!");
+    });
+
+    // 4. Button কে page এ add করুন
+    document.getElementById("container").appendChild(btn);
+</script>
+
+</body>
+</html>

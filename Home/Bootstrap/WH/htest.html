@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Navbar Slide Background</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      position: relative;
+      padding: 15px;
+      overflow: hidden; /* slide বাইরে যাবে না */
+    }
+
+    /* slide background */
+    .navbar::before {
+      content: "";
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #444;
+      transition: top 0.4s ease;
+      z-index: 0;
+    }
+
+    /* hover করলে slide নামবে */
+    .navbar:hover::before {
+      top: 0;
+    }
+
+    .navbar a {
+      position: relative;
+      z-index: 1; /* text উপরে থাকবে */
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+
+</body>
+</html>

@@ -10,6 +10,52 @@
 
 <body>
 
+    <div class="video-container">
+        <!-- ভিডিও যাতে ক্লিক করলে প্লে/পজ হয় তার জন্য এই সেটআপ -->
+        <video id="customVideo" width="100%" autoplay muted loop>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+
+        <!-- ভিডিওর নিচের লাইন বা প্রোগ্রেস বার -->
+        <div class="progress-container">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
+    </div>
+
+    <style>
+        .video-container {
+            position: relative;
+            width: 500px;
+            /* আপনার প্রয়োজনমতো সাইজ দিন */
+            overflow: hidden;
+        }
+
+        /* ডিফল্ট ভিডিও কন্ট্রোল এবং মাউস ইভেন্ট বন্ধ রাখা */
+        video::-webkit-media-controls {
+            display: none !important;
+        }
+
+        /* প্রোগ্রেস বারের ব্যাকগ্রাউন্ড লাইন */
+        .progress-container {
+            width: 100%;
+            height: 2px;
+            background: #ccc;
+            /* পেছনের লাইনের রঙ */
+            cursor: pointer;
+        }
+
+        /* যে লাইনটি ভিডিওর সাথে বাড়বে */
+        .progress-bar {
+            height: 50%;
+            width: 0%;
+            background: red;
+            /* ভিডিও কতটুকু চলল তার রঙ */
+            transition: width 0.1s linear;
+            will-change: width;
+        }
+    </style>
+
+
     <div class="container py-4">
         <h2 class="text-center mb-4">My Gallery</h2>
 
@@ -107,6 +153,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <script>
+        const video = document.getElementById("customVideo");
+        const progressBar = document.getElementById("progressBar");
+
+        function updateSmoothProgress() {
+            if (!video.paused && !video.ended) {
+                const percentage = (video.currentTime / video.duration) * 100;
+                progressBar.style.width = percentage + "%";
+            }
+            // ব্রাউজারের পরবর্তী ফ্রেমের জন্য রিকোয়েস্ট পাঠাবে (প্রায় ৬০ বার প্রতি সেকেন্ডে)
+            requestAnimationFrame(updateSmoothProgress);
+        }
+
+        // ভিডিও যখন প্লে হবে তখন ফাংশনটি শুরু হবে
+        video.addEventListener('play', () => {
+            requestAnimationFrame(updateSmoothProgress);
+        });
+
+    </script>
 </body>
 
 </html>

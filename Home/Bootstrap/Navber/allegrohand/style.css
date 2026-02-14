@@ -1,0 +1,60 @@
+    header{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+        transition: top 0.4s ease;
+    }
+    
+    
+    #wrap{
+        font-size: 1.6rem;
+        position: relative;
+    }
+    @media screen and (max-width: 1024px) {
+        .mainbody{
+            overflow: inherit;
+        }
+    }
+    header .gnb_bg::before{
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 100px;
+        width: 100%;
+        height: 100%;
+        background: #f8f8f8;
+        z-index: 2;
+    }
+    header .gnb_bg:after{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 1;
+}
+@media screen and (max-width: 1440px) {
+    header .topbox {
+        gap: 0 60px;
+    }
+}
+@media screen and (max-width: 1720px) {
+    header .topbox {
+        padding: 0 20px;
+    }
+}
+header .topbox {
+    position: relative;
+    z-index: 3;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    gap: 0 80px;
+    padding: 0 100px;
+}
