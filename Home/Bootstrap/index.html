@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <style>
+        /* CSS */
+        .hover-card {
+        transition: box-shadow 0.3s ease-in-out;
+        }
+        .hover-card:hover {
+        box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important; /* Bootstrap shadow-lg এর সমতুল্য */
+        border-color: #0d6efd !important;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container mt-4">
+  <div class="row">
+    <!-- কার্ড ১ -->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 hover-card hover-card:hover">
+        <img src="images1.jpg" class="card-img-top" alt="Gallery Image">
+        <div class="card-body">
+          <p class="card-text">ছবির সংক্ষিপ্ত বর্ণনা এখানে দিন।</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- কার্ড ২ -->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="images2.jpg" class="card-img-top" alt="Gallery Image">
+        <div class="card-body">
+          <p class="card-text">ছবির সংক্ষিপ্ত বর্ণনা এখানে দিন।</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- কার্ড ৩ -->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="images2.jpg" class="card-img-top" alt="Gallery Image">
+        <div class="card-body">
+          <p class="card-text">ছবির সংক্ষিপ্ত বর্ণনা এখানে দিন।</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <script src="./js/bootstrap.bundle.min.js">
+        
+    </script>
+</body>
+</html>
