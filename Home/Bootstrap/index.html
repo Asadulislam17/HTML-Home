@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,4 +59,180 @@
         
     </script>
 </body>
+=======
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="video-container">
+        <!-- ভিডিও যাতে ক্লিক করলে প্লে/পজ হয় তার জন্য এই সেটআপ -->
+        <video id="customVideo" width="100%" autoplay muted loop>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+
+        <!-- ভিডিওর নিচের লাইন বা প্রোগ্রেস বার -->
+        <div class="progress-container">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
+    </div>
+
+    <style>
+        .video-container {
+            position: relative;
+            width: 500px;
+            /* আপনার প্রয়োজনমতো সাইজ দিন */
+            overflow: hidden;
+        }
+
+        /* ডিফল্ট ভিডিও কন্ট্রোল এবং মাউস ইভেন্ট বন্ধ রাখা */
+        video::-webkit-media-controls {
+            display: none !important;
+        }
+
+        /* প্রোগ্রেস বারের ব্যাকগ্রাউন্ড লাইন */
+        .progress-container {
+            width: 100%;
+            height: 2px;
+            background: #ccc;
+            /* পেছনের লাইনের রঙ */
+            cursor: pointer;
+        }
+
+        /* যে লাইনটি ভিডিওর সাথে বাড়বে */
+        .progress-bar {
+            height: 50%;
+            width: 0%;
+            background: red;
+            /* ভিডিও কতটুকু চলল তার রঙ */
+            transition: width 0.1s linear;
+            will-change: width;
+        }
+    </style>
+
+
+    <div class="container py-4">
+        <h2 class="text-center mb-4">My Gallery</h2>
+
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <img src="image1.jpg" class="card-img-top" alt="">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Image One</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <img src="images2.jpg" class="card-img-top" alt="">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Image Two</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <img src="images3.jpg" class="card-img-top" alt="">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Image Three</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <img src="download.jpg" class="card-img-top" alt="">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Image One</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <img src="images.jpg" class="card-img-top" alt="">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Image Two</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <img src="images3.jpg" class="card-img-top" alt="">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Image Three</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <img src="image1.jpg" class="card-img-top" alt="">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Image One</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <img src="images.jpg" class="card-img-top" alt="">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Image Two</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <img src="images2.jpg" class="card-img-top" alt="">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Image Three</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script>
+        const video = document.getElementById("customVideo");
+        const progressBar = document.getElementById("progressBar");
+
+        function updateSmoothProgress() {
+            if (!video.paused && !video.ended) {
+                const percentage = (video.currentTime / video.duration) * 100;
+                progressBar.style.width = percentage + "%";
+            }
+            // ব্রাউজারের পরবর্তী ফ্রেমের জন্য রিকোয়েস্ট পাঠাবে (প্রায় ৬০ বার প্রতি সেকেন্ডে)
+            requestAnimationFrame(updateSmoothProgress);
+        }
+
+        // ভিডিও যখন প্লে হবে তখন ফাংশনটি শুরু হবে
+        video.addEventListener('play', () => {
+            requestAnimationFrame(updateSmoothProgress);
+        });
+
+    </script>
+</body>
+
+>>>>>>> 17aaa9224f10b89790a8958c8f0510b6e3f84053
 </html>
