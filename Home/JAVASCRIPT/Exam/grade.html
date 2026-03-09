@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade</title>
+</head>
+<body style="font-family: sans-serif; background-color: #f0f0f0; padding: 20px;">
+    <div style="background-color: #fff; padding: 30px; border-radius: 8PX; max-width: 400px; margin: auto; text-align: center;">
+        <p id="id1"></p>
+    </div>
+    <script>
+        var inc=document.getElementById("id1");
+        var num=prompt("Enter Your Number: ");
+        if(num>=80 && num<=100){
+            inc.innerHTML =("Grade: A+");
+        }
+        else if(num>=70){
+            inc.innerHTML =("Grade: A");
+        }
+        else if(num>=60){
+            inc.innerHTML =("Grade: B");
+        }
+        else{
+            inc.innerHTML =("Grade: Fail");
+        }
+    </script>
+</body>
+</html>

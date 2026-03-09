@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximun</title>
+</head>
+<body style="font-family: sans-serif; background-color: #f0f0f0; padding: 20px;">
+    <div style="background-color: #fff; padding: 30px; border-radius: 8PX; max-width: 400px; margin: auto; text-align: center;">
+        <p id="id1"></p>
+    </div>
+    <script>
+        var inc=document.getElementById("id1");
+        var num1=parseInt(prompt("Enter Your Number1: "));
+        var num2=parseInt(prompt("Enter Your Number2: "));
+        var num3=parseInt(prompt("Enter Your Number3: "));
+        var max=(num1>num2) ? ((num1>num3) ? num1:num2) : ((num2>num3) ? num2:num3);
+        
+        inc.innerHTML =("Maximum Value is: "+max);
+    </script>
+</body>
+</html>

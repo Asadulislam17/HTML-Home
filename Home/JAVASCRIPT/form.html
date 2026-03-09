@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="#" name="f">
+        <div>
+            <label for="">Name
+                <input type="text" name="name">
+            </label>
+        </div>
+        <div>
+            <label for="">Address
+                <textarea name="textarea" id="textarea"></textarea>
+            </label>
+        </div>
+        <div>
+            <button type="submit" onclick="sub()">Submit</button>
+        </div>
+    </form>
+    <script>
+        function sub(){
+            var name=document.f.name.value;
+            var address=document.f.textarea.value;
+            var win=window.open("","","width=400px, height=400px;");
+            win.document.write("Name: "+name+"<br>");
+            win.document.write("Address: "+address);
+        }
+    </script>
+</body>
+</html>

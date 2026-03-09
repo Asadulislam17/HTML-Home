@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link href="https://cdn.jsdelivr.net" rel="stylesheet">
+    <style>
+        .form-group { display: flex; align-items: center; margin-bottom: 10px; }
+        .form-group label { width: 100px; }
+        #but { text-align: right; }
+    </style>
+</head>
+
+<body style="font-family: sans-serif; background-color: #f0f0f0; padding: 20px;">
+
+    <div style="background-color: #fff; padding: 30px; border-radius: 8px; max-width: 400px; margin: auto;">
+        <form action="#" name="f" id="form">
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" name="name" id="name" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" name="password" id="password" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>G-mail:</label>
+                <input type="text" name="email" id="email" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Department:</label>
+                <select name="select" class="form-select">
+                    <option value="CSE">CSE</option>
+                    <option value="EEE">EEE</option>
+                    <option value="BBA">BBA</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Course:</label>
+                <input type="checkbox" name="Subject" value="HTML"> HTML
+                <input type="checkbox" name="Subject" value="JavaScript"> JS
+                <input type="checkbox" name="Subject" value="PHP"> PHP
+            </div>
+
+            <div class="form-group">
+                <label>Gender:</label>
+                <input type="radio" name="s1" value="Male"> Male
+                <input type="radio" name="s1" value="Female"> Female
+            </div>
+            
+            <div id="but">
+                <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                <button type="submit" class="btn btn-outline-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById("form");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            if (validate()) {
+                info();
+            }
+        });
+
+        const isEmail = (emailVal) => {
+            var atSymbol = emailVal.indexOf("@");
+            var dot = emailVal.lastIndexOf(".");
+            
+            if (atSymbol < 1) return false;
+
+            if (dot <= atSymbol + 2) return false;
+
+            if (dot === emailVal.length - 1) return false;
+            return true;
+        }
+
+        const validate = () => {
+            const nameVal = nameInput.value.trim();
+            const emailVal = emailInput.value.trim();
+            const passVal = passwordInput.value.trim();
+            
+            if (nameVal === "") {
+                alert('Username cannot be blank');
+                return false;
+            }
+
+            if (passVal.length < 5 || passVal.length > 8) {
+                alert('Password must be between 5 to 8 characters.');
+                return false;
+            }
+            if (emailVal === "") {
+                alert('Email cannot be blank');
+                return false;
+            } else if (!isEmail(emailVal)) {
+                alert('Not a valid Email');
+                return false;
+            }
+            return true;
+        }
+
+        function info() {
+            var name = document.f.name.value;
+            var password = document.f.password.value;
+            var email = document.f.email.value;
+            var select = document.f.select.value;
+            var sub = "";
+            var gender = "";
+
+            for (let i = 0; i < document.f.Subject.length; i++) {
+                if (document.f.Subject[i].checked) {
+                    sub += document.f.Subject[i].value + " , ";
+                }
+            }
+
+            for (let i = 0; i < document.f.s1.length; i++) {
+                if (document.f.s1[i].checked) {
+                    gender = document.f.s1[i].value;
+                }
+            }
+
+            var store = window.open("", "", "width=600, height=600");
+            store.document.write("<h3>Student Data:</h3>");
+            store.document.write("Student Name: " + name + "<br>");
+            store.document.write("Password: " + password + "<br>");
+            store.document.write("E-mail: " + email + "<br>");
+            store.document.write("Department: " + select + "<br>");
+            store.document.write("Courses: " + sub + "<br>");
+            store.document.write("Gender: " + gender + "<br><br>");
+            store.document.write("<button onclick='window.close()'>Close Me</button> ");
+            store.document.write("<button onclick='window.print()'>Print</button>");
+        }
+    </script>
+</body>
+</html>

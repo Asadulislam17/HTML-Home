@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <style>
+    .form-group{
+        display:flex;
+        align-items:center;
+        margin-bottom:10px;
+    }
+
+    .form-group label{
+        width:100px;
+    }
+    #but{
+        text-align: right;
+    }
+
+    </style>
+    </head>
+
+    <body style="font-family: sans-serif; background-color: #f0f0f0; padding: 20px;">
+
+        <div style="background-color: #fff; padding: 30px; border-radius: 8PX; max-width: 400px; margin: auto; text-align: center;">
+
+            <form action="#" name="f">
+                
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" name="name">
+                </div>
+
+                <div class="form-group">
+                    <label>Address:</label>
+                    <textarea name="ad" cols="20"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>G-mail:</label>
+                    <input type="email" name="email">
+                </div>
+
+                <div class="form-group">
+                    <label>Course:</label>
+                    <select name="select">
+                        <option value="CSE">CSE</option>
+                        <option value="BBA">BBA</option>
+                        <option value="MBA">MBA</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Subjects:</label>
+                    <input type="checkbox" name="Subject" value="English">English
+                    <input type="checkbox" name="Subject" value="Bangli">Bangli
+                    <input type="checkbox" name="Subject" value="Math">Math
+                </div>
+
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <input type="radio" name="s1" value="Male">Male
+                    <input type="radio" name="s1" value="Female">Female
+                </div>
+
+                <div id="but">
+                    <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                    <button type="submit" class="btn btn-outline-primary" onclick="info()">Submit</button>
+                    
+                </div>
+
+            </form>
+        </div>
+
+    <script>
+            function  info(){
+                var name = document.f.name.value;
+                var ad = document.f.ad.value;
+                var email = document.f.email.value;
+                var select = document.f.select.value;
+                var sub="";
+                var gender="";
+                for(let i=0; i<document.f.Subject.length; i++){
+                    if(document.f.Subject[i].checked){
+                        sub+=document.f.Subject[i].value+" , ";
+                    }
+                }
+
+                for(i=0; i<document.f.s1.length; i++){
+                    if(document.f.s1[i].checked){
+                        gender=document.f.s1[i].value;
+                    }
+                }
+                store = window.open("", "", "width=600px, height=600px");
+                store.document.write("Student Name: "+name+"<br>");
+                store.document.write("Address: " + ad + "<br>");
+                store.document.write("E-mail: " + email + "<br>");
+                store.document.write("Round: " + select+"<br>");
+                store.document.write("Subjects: " +sub+"<br>");
+                store.document.write("Gender: " +gender);
+                store.document.write("<button onclick='window.close()'>Close Me</button>");
+                store.document.write("<button onclick='window.print()'>Print</button>");
+            }
+        </script>
+    </body>
+</html>

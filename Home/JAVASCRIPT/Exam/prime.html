@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime</title>
+</head>
+<body style="font-family: sans-serif; background-color: #f0f0f0; padding: 20px;">
+    <div style="background-color: #fff; padding: 30px; border-radius: 8PX; max-width: 400px; margin: auto; text-align: center;">
+        <p id="id1"></p>
+    </div>
+    <script>
+        var inc=document.getElementById("id1");
+        var prime=parseInt(prompt("Enter Prime Number: "));
+        
+        if(prime<=1){
+            inc.innerHTML =("Composite number!");
+        }
+        else{
+            var count=0;
+            for(let i=2; i<=prime/2; i++){
+                if(prime%i==0){
+                    count++;
+                    break;
+                }
+            }
+            if(count===0){
+                inc.innerHTML =(prime+" is Prime Number!");
+            }
+            else{
+                inc.innerHTML =(prime+" Not Prime Number!");
+            }
+        }
+    </script>
+</body>
+</html>
